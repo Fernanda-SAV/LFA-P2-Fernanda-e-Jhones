@@ -19,9 +19,12 @@ def visualize_automaton(transitions, start_state, final_states, title):
 
     #add transições
     for state, moves in transitions.items():
+        edges = defaultdict(list)
         for symbol, next_states in moves.items():
             for next_state in next_states:
-                dot.edge(state, next_state, label=symbol)
+                edges[(state, next_state)].append(symbol)
+        for (src, dest), symbols in edges.items():
+            dot.edge(src, dest, label=",".join(symbols))
 
     dot.attr(label=title, fontsize="16")
     dot.render(f"{title.replace(' ', '_')}", cleanup=True, view=True)
@@ -51,35 +54,29 @@ def convert_afe_to_afn(afe_transitions, start_state, final_states):
     #calcula o fecho-ε p/ cada estado
     closures = {state: e_closure(state, afe_transitions) for state in afe_transitions}
 
-    #monta o AFN
-    for state in afe_transitions:
-        for symbol, next_states in afe_transitions[state].items():
-            if symbol == "ε":
-                continue
-            for next_state in next_states:
-                for closure_state in closures[next_state]:
-                    afn_transitions[state][symbol].add(closure_state)
-        
-        if state in final_states:
-            for closure_state in closures[state]:
-                final_states.add(closure_state)
-        #for closure_state in closures[state]:
-         #   if closure_state in final_states:
-          #      final_states.add(state)
     
-    #return {state: dict((k, list(v)) for k, v in moves.items()) for state, moves in afn_transitions.items()}, final_states
-    return {state: dict(moves) for state, moves in afn_transitions.items()}, final_states
-         
+    all_symbols = set(
+        symbol
+        for state_transitions in afe_transitions.values()
+        for symbol in state_transitions.keys()
+        if symbol != "ε"
+    )
 
-'''
-        #add transições do fecho-ε p/ os estados finais
+    #monta o AFN
+    for state, closure in closures.items():
+        for symbol in all_symbols:
+            reachable_states = set()
+            for intermediate_state in closure:
+                reachable_states.update(afe_transitions[intermediate_state].get(symbol, []))
+            for reachable_state in reachable_states:
+                afn_transitions[state][symbol].update(closures[reachable_state])
+
+        #att estados finais
         if state in final_states:
-            for closure_state in closures[state]:
-                final_states.add(closure_state)
-'''
-    #return {state: dict(moves) for state, moves in afn_transitions.items()}, final_states
-   
-#entrada do AFe
+            final_states.update(closure)
+    
+    return {state: dict(moves) for state, moves in afn_transitions.items()}, final_states
+
 '''
 afe_transitions = {
     "q0": {"ε": ["q1", "q2"]},
@@ -91,7 +88,7 @@ afe_transitions = {
 start_state = "q0"
 final_states = {"q4"}
 '''
-
+'''
 afe_transitions ={
     "q0": {"a": ["q0"], "ε": ["q1"]},
     "q1": {"b": ["q1"], "ε": ["q2"]},
@@ -99,12 +96,20 @@ afe_transitions ={
 }
 start_state = "q0"
 final_states = {"q2"}
+'''
 
+afe_transitions = {
+    "q0": {"a": ["q0"], "ε": ["q1"]},
+    "q1": {"b": ["q1"]},
+
+}
+start_state = "q0"
+final_states = {"q1"}
 
 #visualiza o AFe
 visualize_automaton(afe_transitions, start_state, final_states, "Automato AFe")
 
-#converte para AFN
+#converte p/ AFN
 afn_transitions, afn_final_states = convert_afe_to_afn(afe_transitions, start_state, final_states)
 
 #visualiza o AFN
