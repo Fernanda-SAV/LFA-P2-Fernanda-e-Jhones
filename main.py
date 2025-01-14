@@ -19,7 +19,7 @@ def load_automaton_from_json(filepath):
             data = json.load(file)
         return data['transitions'], data['start_state'], set(data['final_states'])
     except (FileNotFoundError, json.JSONDecodeError) as e:
-        print(f"Error loading JSON file: {e}")
+        print(f"Erro ao carregar o arquivo JSON: {e}")
         return None, None, None
 
 def select_file():
