@@ -26,7 +26,7 @@ Trabalho submetido à disciplina de Linguagens Formais e Autômatos - Conversor 
 
 - **`/apresentacoes/`**: Apresentações relacionadas ao projeto (slides, vídeos, PDFs).
 - **`/docs/`**: Documentações adicionais (diagramas, relatórios, manuais).
-- **`/src/`**: Código-fonte principal.
+- **`/src/`**: Contém o código de conversão AFe_to_AFN.py e os arquivos JSON dos autômatos Fe. Além disso, fora dessa pasta há o código "main.py", que chama o código de conversão AFe para AFN.
 - **`/src/automatos_teste/`**: Arquivos JSON para usar no código "main.py" São referentes à construção do AFe para poder ser convertido pelo programa para o AFN. (Opcional)
 - **`/assets/`**: Imagens, ícones e outros recursos estáticos. (Opcional)
 
