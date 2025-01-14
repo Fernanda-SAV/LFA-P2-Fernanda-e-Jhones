@@ -1,9 +1,6 @@
-import graphviz
 import json
-from collections import defaultdict
 import tkinter as tk
-from tkinter import messagebox, filedialog
-import re
+from tkinter import filedialog
 from src.AFe_to_AFN import convert_afe_to_afn, visualize_automaton
 
 def load_automaton_from_json(filepath):
