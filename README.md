@@ -13,24 +13,20 @@ Trabalho submetido à disciplina de Linguagens Formais e Autômatos - Conversor 
 
 ## Resumo do Trabalho
 
-> **Este projeto apresenta o desenvolvimento de uma ferramenta para a conversão de autômato finito com movimento vazio (AFe) em autômato finito não determinísticos (AFNs). Utilizando o Python como recurso para criação do algoritmo, calcula-se o fecho-𝜀 e remove-se as transições vazias, gerando representações dos grafos desses autômatos.**
+> **Este projeto apresenta o desenvolvimento de um conversor que transforma um **Autômato Finito com Movimentos Vazios (AFe)** em um **Autômato Finito Não-Determinístico (AFN)**. Utilizando o Python como recurso para criação do algoritmo, calcula-se o fecho-𝜀 e remove-se as transições vazias, gerando representações dos grafos desses autômatos. Este trabalho agrega conteúdo à disciplina de Linguagens Formais e Autômatos, pois permite entender melhor a relação que para cada AFe é possível construir um AFN equivalente. Este projeto visa proporcionar uma ferramenta prática para estudantes e pesquisadores que desejam explorar e entender as nuances da teoria dos autômatos, especialmente no que diz respeito aos AFe's e AFN's.**
  
-
-> **[Insira aqui um breve resumo do projeto, destacando seus objetivos, importância e principais resultados. Apresente o contexto geral e a motivação para que leitores e avaliadores (por exemplo, da Universidade de Stanford) compreendam rapidamente a relevância do trabalho. Tente ser conciso e objetivo, mas traga os aspectos centrais da sua pesquisa ou desenvolvimento.]**
-
 ## Descrição
+> **A conversão de AFe para AFN marca um aspecto importânte que fala sobre a equivalência entre autômatos AFe e AFN. Este projeto se mostra relevante para para cursos de ciência da computação, matemática e áreas afins, onde o entendimento de autômatos se torna mais "palpável" ao ter um conversor para verificar se os autômatos estão corretos.**.
 
 > **[Forneça uma descrição mais detalhada do seu trabalho. Explique as tecnologias utilizadas, a metodologia aplicada, o processo de desenvolvimento, desafios enfrentados e as soluções adotadas. Caso seja um projeto de software, descreva funcionalidades, requisitos, arquitetura e qualquer informação técnica relevante. Você também pode incluir instruções de instalação, configuração e uso, se desejar.]**
 
 ## Estrutura do Repositório 
 
-- **`/apresentacoes/`**: Apresentações relacionadas ao projeto (slides, vídeos, PDFs).
-- **`/docs/`**: Documentações adicionais (diagramas, relatórios, manuais).
+- **`/apresentacoes/`**: Apresentações relacionadas ao projeto (slide e artigo).
+- **`/docs/`**: Documentações adicionais - contém a explicação do código.
 - **`/src/`**: Contém o código de conversão AFe_to_AFN.py e os arquivos JSON dos autômatos Fe. Além disso, fora dessa pasta há o código "main.py", que chama o código de conversão AFe para AFN.
 - **`/src/automatos_teste/`**: Arquivos JSON para usar no código "main.py" São referentes à construção do AFe para poder ser convertido pelo programa para o AFN. (Opcional)
-- **`/assets/`**: Imagens, ícones e outros recursos estáticos. (Opcional)
-
-Caso seu projeto tenha uma estrutura diferente, sinta-se à vontade para adaptar este tópico.
+- **`/assets/`**: Imagens sobre os autômatos gerados.
 
 ---
 
@@ -51,13 +47,10 @@ Agradecemos a todas as pessoas e instituições que contribuíram para a realiza
 
 ---
 
-## Outros Repositórios
+## Materiais de Apoio para o Projeto
 
-> **[Liste aqui os links para outros repositórios que fazem parte do seu portfólio ou que complementam este projeto. Exemplo:]**
-
-- [Link para outro projeto no Git](https://github.com/usuario/outro-projeto)
-- [Link para documentação complementar](https://github.com/usuario/doc-complementar)
-- [Link para material usado como referência](https://github.com/thalesvalente/teaching/tree/main/formal-languages-and-automata)
+- [Link para referência bibliográfica](https://www.marcusramos.com.br/univasf/lfa-2008-1/Apostila.pdf)
+- [Link para material usado como referência de exercícios e exemplos](https://github.com/thalesvalente/teaching/tree/main/formal-languages-and-automata)
 
 ---
 
