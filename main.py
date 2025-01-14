@@ -6,13 +6,13 @@ from src.AFe_to_AFN import convert_afe_to_afn, visualize_automaton
 
 def load_automaton_from_json(filepath):
     """
-    Load automaton data from a JSON file.
+    Carrega os dados do arquivo JSON.
 
     Args:
-        filepath (str): Path to the JSON file.
+        filepath (str): Caminho para o arquivo JSON.
 
     Returns:
-        tuple: Transitions, start state, and final states of the automaton.
+        tuple: Transições, Estados iniciais e Estados finais do automato.
     """
     try:
         with open(filepath, 'r', encoding='utf-8') as file:
@@ -24,7 +24,7 @@ def load_automaton_from_json(filepath):
 
 def select_file():
     """
-    Open a file dialog to select a JSON file and process the automaton data.
+    Abre a caixa para seleção do arquivo JSON com o AFe e processamento dos dados
     """
     filepath = filedialog.askopenfilename(filetypes=[("JSON files", "*.json")])
     if filepath:
@@ -53,7 +53,7 @@ def select_file():
 
 def create_gui():
     """
-    Create the GUI for the application.
+    Cria a interface para o usuário selecionar o arquivo JSON com o AFe
     """
     root = tk.Tk()
     root.title("Conversor de AFe para AFN")
@@ -71,7 +71,7 @@ def create_gui():
 
 def main():
     """
-    Main function to run the application.
+    Função principal para rodar a aplicação
     """
     create_gui()
 
