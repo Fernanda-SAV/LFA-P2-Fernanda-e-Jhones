@@ -27,7 +27,7 @@ Trabalho submetido à disciplina de Linguagens Formais e Autômatos - Conversor 
 - **`/apresentacoes/`**: Apresentações relacionadas ao projeto (slides, vídeos, PDFs).
 - **`/docs/`**: Documentações adicionais (diagramas, relatórios, manuais).
 - **`/src/`**: Código-fonte principal.
-- **`/tests/`**: Scripts de testes. (Opcional)
+- **`/src/automatos_teste/`**: Arquivos JSON para usar no código "main.py" São referentes à construção do AFe para poder ser convertido pelo programa para o AFN. (Opcional)
 - **`/assets/`**: Imagens, ícones e outros recursos estáticos. (Opcional)
 
 Caso seu projeto tenha uma estrutura diferente, sinta-se à vontade para adaptar este tópico.
