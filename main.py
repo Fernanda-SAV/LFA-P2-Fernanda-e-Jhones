@@ -15,9 +15,23 @@ def select_file():
     filepath = filedialog.askopenfilename(filetypes=[("JSON files", "*.json")])
     if filepath:
         afe_transitions, start_state, final_states = load_automaton_from_json(filepath)
+       
+        print("Transições do AFe:")
+        print(afe_transitions)
+        print("\nEstado Inicial:", start_state)
+        print("\nEstados Finais:", final_states)
+        
         visualize_automaton(afe_transitions, start_state, final_states, f"Automato - AFe")
+        
         afn_transitions, afn_final_states = convert_afe_to_afn(afe_transitions, start_state, final_states)
+        
+        print("\nTransições do AFN:")
+        print(afn_transitions)
+        print("\nEstados Finais do AFN:", afn_final_states)
+
         visualize_automaton(afn_transitions, start_state, afn_final_states, f"Automato - AFN")
+
+    
 
 def main():
     root = tk.Tk()
