@@ -1,3 +1,4 @@
+# Importação das bibliotecas necessárias
 import json
 import os
 import tkinter as tk
@@ -23,33 +24,40 @@ def load_automaton_from_json(filepath):
         return None, None, None
 
 def select_file():
-    """
-    Abre a caixa para seleção do arquivo JSON com o AFe e processamento dos dados
-    """
+    # Abre diálogo para selecionar arquivo JSON
     filepath = filedialog.askopenfilename(filetypes=[("JSON files", "*.json")])
     if filepath:
+        # Carrega os dados do autômato do arquivo JSON
         afe_transitions, start_state, final_states = load_automaton_from_json(filepath)
         if afe_transitions is None:
             return
 
+        # Exibe informações do AFE no console
         print("Transições do AFe:")
         print(afe_transitions)
         print("\nEstado Inicial:", start_state)
         print("\nEstados Finais:", final_states)
         
+        # Cria pasta para salvar as imagens geradas
         image_folder = "generated_images"
         if not os.path.exists(image_folder):
             os.makedirs(image_folder)
         
-        visualize_automaton(afe_transitions, start_state, final_states, os.path.join(image_folder, "Automato_AFe.png"))
+        # Gera e salva a visualização do AFE
+        visualize_automaton(afe_transitions, start_state, final_states, 
+                          os.path.join(image_folder, "Automato_AFe.png"))
         
+        # Realiza a conversão de AFE para AFN
         afn_transitions, afn_final_states = convert_afe_to_afn(afe_transitions, start_state, final_states)
         
+        # Exibe informações do AFN no console
         print("\nTransições do AFN:")
         print(afn_transitions)
         print("\nEstados Finais do AFN:", afn_final_states)
 
-        visualize_automaton(afn_transitions, start_state, afn_final_states, os.path.join(image_folder, "Automato_AFN.png"))
+        # Gera e salva a visualização do AFN
+        visualize_automaton(afn_transitions, start_state, afn_final_states, 
+                          os.path.join(image_folder, "Automato_AFN.png"))
 
 def create_gui():
     """
