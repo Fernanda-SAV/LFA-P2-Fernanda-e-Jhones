@@ -17,7 +17,7 @@ O código começa com a importação das bibliotecas necessárias:
 ### 2. Sobre as funções:
 
 #### a. load_automaton_from_json: Função que carrega os dados de um autômato a partir de um arquivo JSON.
-
+![image](https://github.com/user-attachments/assets/70b0329a-58fa-4290-bcb1-136cbb36bc19)
 - **filepath**: Caminho para o arquivo JSON.
 - **transitions**: Dicionário que representa as transições do autômato.
 - **start_state**: Estado inicial do autômato.
@@ -26,7 +26,7 @@ O código começa com a importação das bibliotecas necessárias:
 **> A função tenta abrir e ler o arquivo JSON especificado pelo caminho. Se o arquivo for encontrado e estiver corretamente formatado, ela retorna as transições, o estado inicial e os estados finais do autômato. Caso ocorra um erro (como o arquivo não ser encontrado ou estar mal formatado), a função imprime uma mensagem de erro e retorna None para cada um dos valores esperados.**
 
 #### b. select_file: Função que permite ao usuário selecionar um arquivo JSON contendo os dados de um autômato e realiza várias operações com esses dados.
-
+![image](https://github.com/user-attachments/assets/43f2ee49-22e5-414b-ae92-58b2c9429c61)
 - **filepath**: Caminho para o arquivo JSON selecionado pelo usuário.
 - **afe_transitions**: Dicionário que representa as transições do autômato finito estocástico (AFE).
 - **start_state**: Estado inicial do AFE.
@@ -38,6 +38,7 @@ O código começa com a importação das bibliotecas necessárias:
 **> A função abre um diálogo para o usuário selecionar um arquivo JSON. Se um arquivo for selecionado, ela carrega os dados do autômato, exibe as informações no console, cria uma pasta para salvar as imagens geradas, visualiza o AFE, converte o AFE para AFN, exibe as informações do AFN no console e visualiza o AFN.**
 
 #### c. create_gui: Função que cria a interface gráfica para o usuário selecionar o arquivo JSON com o AFe.
+![image](https://github.com/user-attachments/assets/c9ec767f-0a1e-493c-a1ef-d64df6dae448)
 - **root**: Janela principal da interface gráfica.
 - **frame**: Contêiner dentro da janela principal para organizar os widgets.
 - **label**: Rótulo que instrui o usuário a selecionar o arquivo JSON.
@@ -46,6 +47,7 @@ O código começa com a importação das bibliotecas necessárias:
 **> A função cria uma janela principal com um título, adiciona um contêiner para organizar os widgets, insere um rótulo com instruções e um botão que chama a função `select_file` ao ser clicado. A interface gráfica é mantida em execução com `root.mainloop()`.**
 
 #### d. main(): Função principal para rodar a aplicação.
+![image](https://github.com/user-attachments/assets/c0ea892d-0992-4f52-9cef-16398123d860)
 **> A função chama `create_gui()` para iniciar a interface gráfica do usuário, permitindo a seleção do arquivo JSON com o AFe.**
 
 ## Código AFe_to_AFN.py
