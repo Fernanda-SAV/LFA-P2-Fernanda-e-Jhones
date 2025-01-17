@@ -48,6 +48,7 @@ O código começa com a importação das bibliotecas necessárias:
 
 #### d. main(): Função principal para rodar a aplicação.
 ![image](https://github.com/user-attachments/assets/c0ea892d-0992-4f52-9cef-16398123d860)
+
 **> A função chama `create_gui()` para iniciar a interface gráfica do usuário, permitindo a seleção do arquivo JSON com o AFe.**
 
 ## Código AFe_to_AFN.py
