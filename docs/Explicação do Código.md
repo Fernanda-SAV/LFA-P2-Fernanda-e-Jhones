@@ -106,6 +106,33 @@ O código começa com a importação das bibliotecas necessárias:
 ![image](https://github.com/user-attachments/assets/57ac2c17-a117-4bcd-8efc-fdeb00003bb9)
 
 
+## Estrutura dos arquivos JSON utilizados
+
+Os arquivos JSON utilizados para representar os autômatos possuem a seguinte estrutura:
+
+- **transitions**: Um dicionário onde as chaves são os estados e os valores são dicionários que mapeiam símbolos de entrada para listas de estados de destino.
+    - Exemplo:
+        ```json
+        "transitions": {
+            "q0": {"ε": ["q1", "q2"]},
+            "q1": {"a": ["q1", "q3"]},
+            "q2": {"b": ["q2"]},
+            "q3": {"ε": ["q4"]},
+            "q4": {"c": ["q4"]}
+        }
+        ```
+- **start_state**: O estado inicial do autômato.
+    - Exemplo:
+        ```json
+        "start_state": "q0"
+        ```
+- **final_states**: Uma lista de estados finais do autômato.
+    - Exemplo:
+        ```json
+        "final_states": ["q4"]
+        ```
+
+**> Este formato permite representar tanto autômatos finitos estocásticos (AFE) quanto autômatos finitos não-determinísticos (AFN), facilitando a conversão entre eles e a visualização das transições e estados.**
 
 
 
