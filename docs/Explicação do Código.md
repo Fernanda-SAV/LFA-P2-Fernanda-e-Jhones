@@ -103,7 +103,7 @@ O código começa com a importação das bibliotecas necessárias:
 ![image](https://github.com/user-attachments/assets/2b92482c-2820-4035-b6d5-a51cdd10ec6a)
 
 **> Sobre a Montagem do AFN, o trecho a seguir mostra que para cada estado e seu fecho-ε, itera sobre todos os símbolos e encontra os estados alcançáveis a partir do fecho-ε. Cada um dos estados do AFe e suas transições são usadas para construir as transições do AFN. além disso, o código atualiza os estados finais do AFN com os estados do fecho-ε, se necessário. Ao fim, em 'return', ele retorna um dicionário com as transições do AFN e o conjunto atualizado de seus estados finais.**
-![image](https://github.com/user-attachments/assets/57ac2c17-a117-4bcd-8efc-fdeb00003bb9)
+![image](https://github.com/user-attachments/assets/961f3aa0-3c6b-4882-84c3-dd751b9cf8d6)
 
 
 ## Estrutura dos arquivos JSON utilizados
