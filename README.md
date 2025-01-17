@@ -16,9 +16,14 @@ Trabalho submetido à disciplina de Linguagens Formais e Autômatos - Conversor 
 > **Este projeto apresenta o desenvolvimento de um conversor que transforma um **Autômato Finito com Movimentos Vazios (AFe)** em um **Autômato Finito Não-Determinístico (AFN)**. Utilizando o Python como recurso para criação do algoritmo, calcula-se o fecho-𝜀 e remove-se as transições vazias, gerando representações dos grafos desses autômatos. Este trabalho agrega conteúdo à disciplina de Linguagens Formais e Autômatos, pois permite entender melhor a relação que para cada AFe é possível construir um AFN equivalente. Este projeto visa proporcionar uma ferramenta prática para estudantes e pesquisadores que desejam explorar e entender as nuances da teoria dos autômatos, especialmente no que diz respeito aos AFe's e AFN's.**
  
 ## Descrição
-> **A conversão de AFe para AFN marca um aspecto importânte que fala sobre a equivalência entre autômatos AFe e AFN. Este projeto se mostra relevante para para cursos de ciência da computação, matemática e áreas afins, onde o entendimento de autômatos se torna mais "palpável" ao ter um conversor para verificar se os autômatos estão corretos.**.
+> **A conversão de AFe para AFN marca um aspecto importânte que fala sobre a equivalência entre autômatos AFe e AFN. Este projeto se mostra relevante para para cursos de ciência da computação, matemática e áreas afins, onde o entendimento de autômatos se torna mais "palpável" ao ter um conversor para verificar se os autômatos estão corretos. Sobre as tecnologias utilizadas, foram aplicadas como linguagem de programação o Python, pela sua simplicidade e ampla biblioteca de manipulação de dados. O ambiente de desenvolvimento usado foi o Visual Studio Code pelo suporte a várias ferramentas. Dentre as bibliotecas aplicadas estão, principalmente: graphviz, defaltdict, json e tkinter.**
+>**Os passos aplicados no desenvolvimento do projeto consistiu no:**
+- **Levantamento da literatura: foi necessário entender as definições de AFe e AFN, além das regras de conversão;**
+- **Conhecimento da estrutura de um autômato e adaptação ao código: explorou-se a estruturação dos autômatos, onde os estados são nós e transições são arestas;**
+- **Desenvolvimento iterativo: incremento de funcionalidades que facilitava vários testes de diferentes autômatos, realizando melhorias contínuas;**
+- **Testes: validação dos resultados utilizando exemplos conhecidos na literatura.**
 
-> **[Forneça uma descrição mais detalhada do seu trabalho. Explique as tecnologias utilizadas, a metodologia aplicada, o processo de desenvolvimento, desafios enfrentados e as soluções adotadas. Caso seja um projeto de software, descreva funcionalidades, requisitos, arquitetura e qualquer informação técnica relevante. Você também pode incluir instruções de instalação, configuração e uso, se desejar.]**
+> **Dentre os desafios enfrentados e soluções adotadas no decorrer do projeto, contou-se com a detecção de ciclos, para verificar o controle dos estados ja processados, além da revisão do algoritmo para que as transições sejam eficientes, houve também a vistoria para garantir que o comportamento do AFN resultante fosse idêntico ao AFe original, testando com alguns casos.**
 
 ## Estrutura do Repositório 
 
